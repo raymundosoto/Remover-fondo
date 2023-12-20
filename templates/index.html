@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Fondo de Imagen</title>
+</head>
+<body>
+    <h1>Eliminar Fondo de Imagen</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <button type="submit">Eliminar Fondo</button>
+    </form>
+    
+    {% if original_img %}
+        <h2>Imagen Original:</h2>
+        <img src="{{ original_img }}" alt="Imagen Original" width="300">
+    {% endif %}
+    
+    {% if result_img %}
+        <h2>Imagen con Fondo Eliminado:</h2>
+        <img src="{{ result_img }}" alt="Imagen sin Fondo" width="300">
+        <a href="/download/{{ result_img.split('/')[1] }}" download="imagen_sin_fondo.png">
+            <button>Descargar Imagen sin Fondo</button>
+        </a>
+    {% endif %}
+    
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
