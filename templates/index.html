@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>Eliminar Fondo de Imagen</h1>
+    <h2>Elija su archivo, remueva el fondo y espere unos segundos para observar el resultado</h1>
     
     <form method="POST" enctype="multipart/form-data">
         <input type="file" name="file" accept="image/*">
@@ -27,5 +28,7 @@
     {% if error %}
         <p>{{ error }}</p>
     {% endif %}
+    <h2>Creado con python</h1>
+
 </body>
 </html>
